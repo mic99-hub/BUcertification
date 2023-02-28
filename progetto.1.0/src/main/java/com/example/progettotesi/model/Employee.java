@@ -12,7 +12,7 @@ import java.util.Date;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "first_name",nullable = false)
     private String firstName;
@@ -22,16 +22,16 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
-
-    @Column(name = "company_level")
-    private String companyLevel;
+    @OneToOne
+    @JoinColumn(name = "level_id")
+    private Level level;
 
     @Column(name = "company_residence")
     private String companyResidence;
 
-    //@Column( name = "assumption_date")
-    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DateFormatPDSUtility.DATE_CONSTANT_CS)
-    //private Date asssumptionDate;
+    @Column( name = "assumption_date")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    private Date asssumptionDate;
 
 
 

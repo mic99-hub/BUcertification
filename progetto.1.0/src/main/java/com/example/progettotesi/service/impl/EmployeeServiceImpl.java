@@ -27,6 +27,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee searchEmployee(long id) {
+        return employeeRepository.findById(id).orElseThrow(()
+                        -> new ResourceNotFoundException("Employee","Id",id));
+    }
+
+    @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }

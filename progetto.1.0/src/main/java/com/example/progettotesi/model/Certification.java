@@ -10,7 +10,7 @@ public class Certification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long certificationId;
+    private Long certificationId;
 
     @Column(name ="certification_name" , nullable = false )
     private String certificationName;
