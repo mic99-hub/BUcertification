@@ -18,6 +18,12 @@ public class LevelServiceImpl implements LevelService {
         super();
         this.levelRepository=levelRepository;
     }
+
+    @Override
+    public Level saveLevel(Level level) {
+        return levelRepository.save(level);
+    }
+
     @Override
     public Level getLevelById(long levelId) {
         return levelRepository.findById(levelId).orElseThrow(() ->

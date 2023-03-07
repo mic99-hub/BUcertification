@@ -23,10 +23,11 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
     }
 
-    @PostMapping("/search")
-    public ResponseEntity<Employee> searchEmployee(long id){
-        return new ResponseEntity<Employee>(employeeService.searchEmployee(id),HttpStatus.OK);
+    @GetMapping("/search")
+    public ResponseEntity<List<Employee>> searchEmployees(@RequestParam("query") String query){
+        return ResponseEntity.ok(employeeService.searchEmployees(query));
     }
+
 
 
 

@@ -3,6 +3,8 @@ package com.example.progettotesi.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table
@@ -23,5 +25,14 @@ public class Certification {
 
     @Column(name = "duration")
     private String duration;
+
+    @OneToOne
+    @JoinColumn(name = "assignment_id")
+    private Assignment assignment;
+
+    @OneToMany(cascade = CascadeType.ALL )
+    @JoinColumn(name = "certification_fkid")
+    private List<Status> status;
+
 
 }

@@ -33,6 +33,11 @@ public class Employee {
     //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date asssumptionDate;
 
+    @OneToOne
+    @JoinColumn(name = "assignment_id")
+    private Assignment assignment;
+
+
 
 
 

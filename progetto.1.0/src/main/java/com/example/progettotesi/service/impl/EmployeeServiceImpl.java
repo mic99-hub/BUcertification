@@ -4,6 +4,7 @@ import com.example.progettotesi.exception.ResourceNotFoundException;
 import com.example.progettotesi.model.Employee;
 import com.example.progettotesi.repository.EmployeeRepository;
 import com.example.progettotesi.service.EmployeeService;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,10 +28,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee searchEmployee(long id) {
-        return employeeRepository.findById(id).orElseThrow(()
-                        -> new ResourceNotFoundException("Employee","Id",id));
+    public List<Employee> searchEmployees(String query) {
+        List<Employee> employees = employeeRepository.searchEmployees(query);
+        return employees;
     }
+
 
     @Override
     public List<Employee> getAllEmployees() {
@@ -72,4 +74,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         employeeRepository.deleteById(id);
     }
+
+
+   // @Test
+    //void countMethod(){
+       // long count = employeeRepository.count();
+       // System.out.println(count);
+    //}
+
+
+
 }
