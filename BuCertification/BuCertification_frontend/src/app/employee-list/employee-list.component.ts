@@ -36,4 +36,9 @@ export class EmployeeListComponent implements OnInit{
       this.getEmployees();
     })
   }
+
+
+  saveEmployee(){
+    this.router.navigate(['save-employee']);
+  }
 }

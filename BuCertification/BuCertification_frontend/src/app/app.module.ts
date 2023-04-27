@@ -8,13 +8,15 @@ import { SaveEmployeeComponent } from './save-employee/save-employee.component';
 import {FormsModule} from "@angular/forms";
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import {NgOptimizedImage} from "@angular/common";
+import { CertificationListComponent } from './certification-list/certification-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
     SaveEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    CertificationListComponent
   ],
   imports: [
     BrowserModule,

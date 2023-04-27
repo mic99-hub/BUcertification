@@ -1,4 +1,4 @@
-<h2> EMPLOYEE LIST </h2>
+<h2> Employee List </h2>
 <table class=" table table-primary table-striped" style="border-radius: 25px">
   <thead class="table-dark">
   <tr>
@@ -20,9 +20,20 @@
     <td> {{employee.companyResidence}}</td>
     <td> {{employee.assignment}}</td>
     <td>
-      <button (click)="updateEmployee(employee.id)" class=" btn btn-primary"> Update </button>
-      <button (click)="deleteEmployee(employee.id)" class=" btn btn-danger" style="margin-left: 10px" > Delete </button>
+
+      <a (click)="saveEmployee()" class="material-icons btn-sm btn-outline-secondary" style="">person_add</a>
+      <a (click)="updateEmployee(employee.id)" class=" btn-sm btn-outline-secondary material-icons" style="margin-left: 10px">edit</a>
+      <a (click)="deleteEmployee(employee.id)" class=" btn-sm btn-outline-secondary material-icons" style="margin-left: 10px" >delete_forever</a>
     </td>
   </tr>
   </tbody>
+
+
+
+
+  <div id="liveAlertPlaceholder"></div>
+  <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+
 </table>
+
+
